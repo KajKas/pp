@@ -12,7 +12,7 @@ import ArticleSmall from "./components/ArticleSmall/ArticleSmall";
 function App() {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [articlesToDisplay, setArticlesToDisplay] = useState(8);
+    const [articlesToDisplay, setArticlesToDisplay] = useState(5);
 
     const url = 'https://newsapi.org/v2/top-headlines?country=pl&apiKey=2f8f24b1943846078e4b9077a993d3d8';
 
@@ -26,7 +26,7 @@ function App() {
     }, []);
 
     const showMore = () => {
-        setArticlesToDisplay(articlesToDisplay + 6)
+        setArticlesToDisplay(articlesToDisplay + 3)
     };
 
 
@@ -35,7 +35,7 @@ function App() {
             <h1>Artykuły</h1>
             {
                 isLoading ?
-                    <p>Ładowanie treści...</p> :
+                    <p className="loader">Ładowanie treści...</p> :
                     <>
                         <ArticleBig articles={articles.slice(0, 2)}/>
                         <ArticleSmall articles={articles.slice(2, articlesToDisplay)}/>
