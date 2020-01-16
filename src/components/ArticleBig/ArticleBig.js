@@ -12,7 +12,7 @@ function ArticleBig({articles}) {
                         <a href="#">
                             {
                                 articles ? <div>
-                                    <img className="article__photo--large" src={article.urlToImage || placeholder}
+                                    <img className="article__photo article__photo--large" src={article.urlToImage || placeholder}
                                          alt="zdjecie"/>
                                     <h4 className="article__category">{article.source.name}</h4>
                                     <h3 className="article__title">{article.title}</h3>

@@ -32,16 +32,20 @@ function App() {
 
     return (
         <Container className="App">
-            <h1>Artykuły</h1>
-            {
-                isLoading ?
-                    <p className="loader">Ładowanie treści...</p> :
-                    <>
-                        <ArticleBig articles={articles.slice(0, 2)}/>
-                        <ArticleSmall articles={articles.slice(2, articlesToDisplay)}/>
-                    </>
-            }
-            <button onClick={() => showMore()}>Zobacz więcej</button>
+            <div className="header">
+                <h1 className="header__title">Artykuły</h1>
+            </div>
+            <div className="main">
+                {
+                    isLoading ?
+                        <p className="loader">Ładowanie treści...</p> :
+                        <>
+                            <ArticleBig articles={articles.slice(0, 2)}/>
+                            <ArticleSmall articles={articles.slice(2, articlesToDisplay)}/>
+                        </>
+                }
+                <button className="main__button" onClick={() => showMore()}>Zobacz więcej</button>
+            </div>
         </Container>
     );
 }

@@ -12,7 +12,7 @@ function ArticleSmall({articles}) {
                         <a href="#">
                             {
                                 articles ? <div>
-                                    <img className="article__photo--small" src={article.urlToImage || placeholder}
+                                    <img className="article__photo article__photo--small" src={article.urlToImage || placeholder}
                                          alt="zdjecie"/>
                                     <h5 className="article__category">{article.source.name}</h5>
                                     <h4 className="article__title">{article.title}</h4>
